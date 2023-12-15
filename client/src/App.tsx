@@ -15,6 +15,10 @@ function App() {
 					id: 2,
 					body: 'How are you?',
 				},
+				{
+					id: 3,
+					body: 'I am fine.',
+				},
 			],
 		},
 	];

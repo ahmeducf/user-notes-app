@@ -5,6 +5,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -14,5 +15,19 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+
+    // Integrate with Prettier rules
+    curly: ['error', 'all'],
+    allowParens: 'off',
+    'no-confusing-arrow': ['error', { allowParens: false }],
+    quotes: [
+      'warn',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: false },
+    ],
+    'no-unused-vars': [
+      'warn',
+      { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
+    ],
   },
-}
+};

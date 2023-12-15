@@ -1,8 +1,10 @@
 export type Message = {
-	body: string;
+	id: number;
+  body: string;
 };
 
 export type User = {
+  id: number;
   name: string;
   messages: Message[];
 };

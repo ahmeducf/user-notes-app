@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"build": "npm i && npx prisma generate",
 		"dev": "ts-node-dev src/index.ts"
 	},
 	"keywords": [],
@@ -18,6 +19,7 @@
 	"dependencies": {
 		"@graphql-yoga/node": "2.13.13",
 		"@pothos/core": "^3.40.1",
+		"@pothos/plugin-prisma": "^3.63.0",
 		"@prisma/client": "^5.7.0",
 		"graphql": "^16.8.1",
 		"graphql-scalars": "^1.22.4"

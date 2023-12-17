@@ -1,31 +1,15 @@
+import { useQuery } from 'urql';
 import UserDisplay from './components/UserDisplay';
-import { User } from './types';
+import { GetUsersDocument } from './graphql/generated';
 
 function App() {
-  const users: User[] = [
-    {
-      id: 1,
-      name: 'Salah',
-      messages: [
-        {
-          id: 1,
-          body: 'Hello World!',
-        },
-        {
-          id: 2,
-          body: 'How are you?',
-        },
-        {
-          id: 3,
-          body: 'I am fine.',
-        },
-      ],
-    },
-  ];
+  const [results] = useQuery({
+    query: GetUsersDocument,
+  });
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center gap-y-12 bg-zinc-800 p-4">
-      {users.map((user) => (
+    <div className="flex h-screen w-full flex-col items-center justify-center gap-y-12 overflow-y-scroll bg-zinc-800 p-4 pt-16">
+      {results.data?.users.map((user) => (
         <UserDisplay user={user} key={user.id} />
       ))}
     </div>

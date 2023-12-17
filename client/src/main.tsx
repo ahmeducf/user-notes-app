@@ -5,7 +5,7 @@ import App from './App.tsx';
 import './index.css';
 
 const client = createClient({
-  url: 'http://0.0.0.0:4000/graphql',
+  url: import.meta.env.VITE_API_URL as string,
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

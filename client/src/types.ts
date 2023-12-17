@@ -1,10 +1,4 @@
-export type Message = {
-  id: number;
-  body: string;
-};
+import type { GetUsersQuery } from './graphql/generated';
+export type Message = GetUsersQuery['users'][0]['messages'][0];
 
-export type User = {
-  id: number;
-  name: string;
-  messages: Message[];
-};
+export type User = GetUsersQuery['users'][0];

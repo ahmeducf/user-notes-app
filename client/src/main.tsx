@@ -6,7 +6,6 @@ import './index.css';
 
 const client = createClient({
   url: 'http://0.0.0.0:4000/graphql',
-  exchanges: [],
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

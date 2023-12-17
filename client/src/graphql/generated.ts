@@ -46,7 +46,7 @@ export type GetUsersQuery = {
   users: Array<{
     __typename?: 'User';
     name: string;
-    messages: Array<{ __typename?: 'Message'; body: string }>;
+    messages: Array<{ __typename?: 'Message'; id: string; body: string }>;
   }>;
 };
 
@@ -73,6 +73,7 @@ export const GetUsersDocument = {
                   selectionSet: {
                     kind: 'SelectionSet',
                     selections: [
+                      { kind: 'Field', name: { kind: 'Name', value: 'id' } },
                       { kind: 'Field', name: { kind: 'Name', value: 'body' } },
                     ],
                   },

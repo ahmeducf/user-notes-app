@@ -2,6 +2,7 @@ query GetUsers {
   users {
     name
     messages {
+      id
       body
     }
   }
